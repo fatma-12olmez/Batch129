@@ -1,0 +1,26 @@
+package suleymanhoca.day13whileloopdowhileloop;
+
+import java.util.Scanner;
+
+public class DoWhileDo02 {
+
+    public static void main(String[] args) {
+        /*
+        Kullanicidan bir tam sayi aliniz
+        Tam sayi 100'den kucuk ise kullanica "Kaybettiniz" mesaji vererek oyunu sonlandiriniz.
+        Tam sayi 100 ve 100'den buyuk ise "Kazandiniz" mesaji vererek oyuna devam ettiriniz.
+         */
+        Scanner input =new Scanner(System.in);
+        int num=0;
+
+        do {
+            System.out.println("bir sayi giriniz...");
+             num=input.nextInt();
+            if (num>=100 ){
+                System.out.println("Kazandiniz!");
+            }
+        }while (num>=100);
+
+        System.out.println("Kaybettiniz!");
+    }
+}
