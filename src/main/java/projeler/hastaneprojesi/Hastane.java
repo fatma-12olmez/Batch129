@@ -8,7 +8,9 @@ public class Hastane extends VeriBankasi {
 
 
     static Scanner input = new Scanner(System.in);
+
     static VeriBankasi veriBankasi = new VeriBankasi();
+
     private static Hasta yeniHasta;
     private static int doktorSecimi;
 
@@ -52,10 +54,10 @@ public class Hastane extends VeriBankasi {
         System.out.println("\033[34m\n***************************************************\33[0m");
 
         System.out.println("\33[36m\nRandevu almak icin 1'e cikmak icin 2'ye basiniz\33[0m");
-        int devamMi=input.nextInt();
-        if( devamMi==1){
+        int devamMi = input.nextInt();
+        if (devamMi == 1) {
             randevuBolumu();
-        }else {
+        } else {
             cikis();
         }
     }
@@ -65,6 +67,7 @@ public class Hastane extends VeriBankasi {
         System.out.println(" *** ** * Saglikli gunler dileriz * ** ***");
         System.exit(0);
     }
+
     public static void randevuBolumu() {
 
         System.out.println("\033[33m\n**************************************************\033[0m");
@@ -123,7 +126,7 @@ public class Hastane extends VeriBankasi {
                 randevuAlma();
                 break;
 
-                case 5:
+            case 5:
                 slowPrint(bes + "'den randevunuz olusturuluyor\n\n", 60);
                 hastaBilgileri();
                 randevuAlma();
@@ -220,7 +223,7 @@ public class Hastane extends VeriBankasi {
 
         System.out.println("Lutfen Cinsiyetinizi giriniz ('Erkek' 'Kadin')");
         String hastaCinsiyet = input.next();
-        if(!(hastaCinsiyet.equalsIgnoreCase("erkek")|| hastaCinsiyet.equalsIgnoreCase("kadin"))){
+        if (!(hastaCinsiyet.equalsIgnoreCase("erkek") || hastaCinsiyet.equalsIgnoreCase("kadin"))) {
             System.err.println("Lutfen gecerli bilgi giriniz");
             hastaBilgileri();
         }
@@ -229,7 +232,7 @@ public class Hastane extends VeriBankasi {
         System.out.println("Lutfen yasinizi giriniz");
 
         int hastaYas = input.nextInt();
-        if(!(hastaYas>=0 && hastaYas<=120)){
+        if (!(hastaYas >= 0 && hastaYas <= 120)) {
             System.out.println("Lutfen gecerli bir yas araligi giriniz");
             hastaBilgileri();
         }
@@ -256,9 +259,9 @@ public class Hastane extends VeriBankasi {
         System.out.println("" +
 
                 "\33[35m Acil Doktorumuz Uzm.Dr Seren HANIM'a yonlendirildiniz, " +
-                        "\n Sabriniz icin tesekkur ederiz" +
-                        "\n Cok kisa bir sure icinde cagrilacaksiniz, " +
-                        "\n Ekranlardan isminizi takip ediniz\33[0m");
+                "\n Sabriniz icin tesekkur ederiz" +
+                "\n Cok kisa bir sure icinde cagrilacaksiniz, " +
+                "\n Ekranlardan isminizi takip ediniz\33[0m");
         System.out.println("\033[33m\n***************************************************\n\033[0m");
         System.exit(0);
     }
@@ -281,6 +284,7 @@ public class Hastane extends VeriBankasi {
                 aciliyetDurumu();
         }
     }
+
 
     public static void slowPrint(String text, int delay) {
         for (char c : text.toCharArray()) {

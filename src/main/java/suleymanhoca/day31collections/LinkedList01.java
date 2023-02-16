@@ -1,4 +1,4 @@
-package suleymanhoca.day29Exceptions.day31collections;
+package suleymanhoca.day31collections;
 
 import java.util.LinkedList;
 import java.util.List;

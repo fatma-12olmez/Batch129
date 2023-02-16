@@ -1,6 +1,7 @@
 package Recap;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class Lambda01 {
@@ -24,6 +25,11 @@ public class Lambda01 {
         System.out.println(" \n  *******");
         toplamLamdaEx(sayi);
         System.out.println(" \n  *******");
+        System.out.println(pozitifElCarpimLamdaEx(sayi));
+        System.out.println(" \n  *******");
+        System.out.println(ciftElKareKucBuySirListReturn(sayi));
+        System.out.println(" \n  *******");
+
 
 
     }
@@ -69,7 +75,7 @@ public class Lambda01 {
 
     // SORU7: List elemanlarının Method References ile toplamını bulun ve yazdırın
 
-    public static void toplamMetRef(List<Integer> sayi) {    //reduce() tek bir eleman olrak cikiyorsa kullanilir sonunda get() kullanilir
+    public static void toplamMetRef(List<Integer> sayi) {    //reduce() tek bir eleman olrak cikiyorsa kullanilir
 
         Optional<Integer> sonuc = sayi.stream().reduce(Integer::sum);     //reduce() method'u terminal methoddur.Terminal  method'lardan sonra hicbir method kullanilamaz
         System.out.println(sonuc);
@@ -79,8 +85,53 @@ public class Lambda01 {
 
     public static void toplamLamdaEx(List<Integer> sayi) {
 
-      int sonuc=  sayi.stream().reduce(0,(a,b)->a+b);
+        int sonuc = sayi.stream().reduce(0, (a, b) -> a + b);
         System.out.println(sonuc);
     }
+
+    //SORU9 : Listin pozitif elemanlarının, carpımını Lambda Expression ile return ederek yazdırın
+
+    public static int pozitifElCarpimLamdaEx(List<Integer> sayi) {
+
+      int sonuc= sayi.stream().filter(t->t>0).reduce(1,(a,b)->a*b);
+        return sonuc;
+    }
+
+    //SORU10 : Listin cift elemanlarının, karelerini, kucukten buyuge sıralayıp list halinde return ederek yazdırınız
+
+       public static List<Integer> ciftElKareKucBuySirListReturn(List<Integer> sayi){
+
+      List<Integer> sonuc=  sayi.stream().filter(t->t%2==0).map(t->t*t).sorted().collect(Collectors.toList());
+
+        return sonuc;
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
